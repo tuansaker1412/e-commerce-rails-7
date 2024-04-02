@@ -13,6 +13,11 @@ gem 'jbuilder'
 gem 'tzinfo-data', platforms: %i[ windows jruby ]
 gem 'bootsnap', require: false
 gem 'dotenv-rails'
+gem 'bootstrap', '~> 5.3.2'
+gem 'jquery-rails'
+gem 'mini_racer'
+gem 'sassc'
+gem 'dartsass-sprockets'
 
 group :development, :test do
   gem 'byebug'
