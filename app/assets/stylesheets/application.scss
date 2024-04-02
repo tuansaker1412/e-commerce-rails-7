@@ -1,2 +1,8 @@
+/*
+  *= require_tree .
+  *= require_self
+  *= require_directory ./dist/
+*/
+
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
