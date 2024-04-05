@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'mini_racer'
 gem 'sassc'
 gem 'dartsass-sprockets'
+gem 'devise', '~> 4.9'
 
 group :development, :test do
   gem 'byebug'
