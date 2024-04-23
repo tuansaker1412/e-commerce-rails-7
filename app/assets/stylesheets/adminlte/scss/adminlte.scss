@@ -1,0 +1,26 @@
+/*!
+ *   AdminLTE v4.0.0-alpha2
+ *   Author: Colorlib
+ *   Website: AdminLTE.io <https://adminlte.io>
+ *   License: Open source - MIT <https://opensource.org/licenses/MIT>
+ */
+
+
+// AdminLTE Configuration
+// ---------------------------------------------------
+@import "bootstrap-variables"; // little modified are here
+
+
+// AdminLTE Configuration
+// ---------------------------------------------------
+@import "variables";
+@import "variables-dark";
+@import "mixins";
+
+// AdiminLTE Parts
+// ---------------------------------------------------
+@import "parts/core";
+@import "parts/components";
+@import "parts/extra-components";
+@import "parts/pages";
+@import "parts/miscellaneous";

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ecommerce Rails 7</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= render "layouts/admin/head" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary app-loaded sidebar-open">
+    <div class="app-wrapper">
+      <%= render "layouts/admin/topbar" %>
+      <%= render "layouts/admin/sidenav" %>
+
+      <%= yield %>
+      <%= render "layouts/admin/footer" %>
+    </div>
+  </body>
+</html>

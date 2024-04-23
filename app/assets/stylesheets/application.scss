@@ -1,7 +1,9 @@
 /*
-  *= require_tree .
   *= require_self
+  // adminlte common
   *= require_directory ./dist/
+  // adminlte configuration
+  *= require_file ./adminlte/scss/adminlte
 */
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
