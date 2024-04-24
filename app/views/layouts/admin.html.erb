@@ -16,7 +16,9 @@
       <%= render "layouts/admin/topbar" %>
       <%= render "layouts/admin/sidenav" %>
 
-      <%= yield %>
+      <main class="app-main">
+        <%= yield %>
+      </main>
       <%= render "layouts/admin/footer" %>
     </div>
   </body>
