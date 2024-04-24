@@ -1,4 +1,4 @@
-namespace :user do
+namespace :admin do
   task :create, [:email, :password] => :environment do |task, args|
     email = args[:email]
     password = args[:password]
@@ -8,6 +8,6 @@ namespace :user do
       next
     end
 
-    User.create(email: email, password: password)
+    Admin.create(email: email, password: password)
   end
 end
