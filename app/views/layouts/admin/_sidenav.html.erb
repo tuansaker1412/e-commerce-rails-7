@@ -3,10 +3,10 @@
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
     <!--begin::Brand Link-->
-    <a href="/" class="brand-link">
+    <%= link_to admin_path, class: "brand-link" do %>
       <!--begin::Brand Image-->
       <img
-        src="/assets/img/AdminLTELogo.png"
+        src="/assets2/img/AdminLTELogo.png"
         alt="AdminLTE Logo"
         class="brand-image opacity-75 shadow"
       />
@@ -14,7 +14,7 @@
       <!--begin::Brand Text-->
       <span class="brand-text fw-light">Ecommerce Admin</span>
       <!--end::Brand Text-->
-    </a>
+    <% end %>
     <!--end::Brand Link-->
   </div>
   <!--end::Sidebar Brand-->
