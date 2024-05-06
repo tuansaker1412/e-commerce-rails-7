@@ -1,9 +1,25 @@
-<h1>New category</h1>
+<div style="padding: 0.5rem;"></div>
 
-<%= render "form", admin_category: @admin_category %>
-
-<br>
-
-<div>
-  <%= link_to "Back to categories", admin_categories_path %>
+<div class="container-fluid">
+  <!--begin::Row-->
+  <div class="row g-4">
+    <!--begin::Col-->
+    <div class="col-md-12">
+      <!--begin::Accordion-->
+      <div class="card card-primary card-outline mb-4">
+        <!--begin::Header-->
+        <div class="card-header">
+          <div class="card-title">New category</div>
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body">
+          <%= render "form", admin_category: @admin_category %>
+          <hr>
+          <%= link_to "Back to categories", admin_categories_path, class: "btn btn btn-warning" %>
+        </div>
+        <!--end::Body-->
+      </div>
+    </div>
+  </div>
 </div>

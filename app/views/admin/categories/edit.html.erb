@@ -1,10 +1,28 @@
-<h1>Editing category</h1>
+<div style="padding: 0.5rem;"></div>
 
-<%= render "form", admin_category: @admin_category %>
-
-<br>
-
-<div>
-  <%= link_to "Show this category", [:admin, @admin_category] %> |
-  <%= link_to "Back to categories", admin_categories_path %>
+<div class="container-fluid">
+  <!--begin::Row-->
+  <div class="row g-4">
+    <!--begin::Col-->
+    <div class="col-md-12">
+      <!--begin::Accordion-->
+      <div class="card card-primary card-outline mb-4">
+        <!--begin::Header-->
+        <div class="card-header">
+          <div class="card-title">Editing category ID: <%= @admin_category.id %></div>
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body">
+          <%= render "form", admin_category: @admin_category %>
+          <hr>
+          <%= link_to "Show this category", [:admin, @admin_category], class: "btn btn-primary" %>
+          <%= link_to "Back to categories", admin_categories_path, class: "btn btn btn-warning" %>
+          <hr>
+          <%= button_to "Destroy this category", [:admin, @admin_category], method: :delete, class: "btn btn-danger" %>
+        </div>
+        <!--end::Body-->
+      </div>
+    </div>
+  </div>
 </div>
