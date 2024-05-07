@@ -1,19 +1,18 @@
-
 <%= form_with(model: [:admin, admin_category]) do |form| %>
-<div class="row g-3">
-  <div class="col-md-12">
-    <%= form.label :name, style: "display: block", class: "form-label", for: "category_name" %>
-    <%= form.text_field :name, class: "form-control", id: "category_name" %>
-  </div>
+  <div class="row g-3">
+    <div class="col-md-12">
+      <%= form.label :name, style: "display: block", class: "form-label", for: "category_name" %>
+      <%= form.text_field :name, class: "form-control", id: "category_name" %>
+    </div>
 
-  <div class="col-md-12">
-    <%= form.label :description, style: "display: block", class: "form-label", for: "category_description" %>
-    <%= form.text_area :description, class: "form-control", id: "category_description" %>
-  </div>
+    <div class="col-md-12">
+      <%= form.label :description, style: "display: block", class: "form-label", for: "category_description" %>
+      <%= form.text_area :description, class: "form-control", id: "category_description" %>
+    </div>
 
-  <div>
-    <%= form.submit "Update category", class: "btn btn-info" %>
+    <div>
+      <%= form.submit "Update category", class: "btn btn-info" %>
+    </div>
   </div>
-</div>
 <% end %>
 
