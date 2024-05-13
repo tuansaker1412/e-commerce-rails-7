@@ -14,10 +14,18 @@
         <!--end::Header-->
         <!--begin::Body-->
         <div class="card-body">
-          <h6><strong>Name:</strong></h6>
-          <p><%= @admin_category.name %></p>
-          <h6><strong>Description:</strong></h6>
-          <p><%= @admin_category.description %></p>
+          <div class="row g-4">
+            <div class="col-md-8">
+              <h6><strong>Name:</strong></h6>
+              <p><%= @admin_category.name %></p>
+              <h6><strong>Description:</strong></h6>
+              <p><%= @admin_category.description %></p>
+            </div>
+            <div class="col-md-4">
+              <h6><strong>Image:</strong></h6>
+              <%= @admin_category.image.present? ? image_tag(@admin_category.image, class: "img-fluid") : image_tag("https://via.placeholder.com/50", class: "img-fluid") %>
+            </div>
+          </div>
           <hr>
           <%= link_to "Edit this category", edit_admin_category_path(@admin_category), class: "btn btn-warning" %>
           <%= link_to "Back to categories", admin_categories_path, class: "btn btn btn-primary" %>

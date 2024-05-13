@@ -10,6 +10,13 @@
       <%= form.text_area :description, class: "form-control", id: "category_description" %>
     </div>
 
+    <div class="col-md-12">
+      <div class="input-group">
+        <%= form.file_field :image, class: "form-control", type: "file", id: "category_image" %>
+        <%= form.label :upload, class: "input-group-text", for: "category_image" %>
+      </div>
+    </div>
+
     <div>
       <%= form.submit type == "update" ? "Update category" : "New category", class: "btn btn-info" %>
     </div>

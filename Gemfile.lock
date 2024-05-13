@@ -137,6 +137,9 @@ GEM
       rake (>= 13)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (1.2.3)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -170,6 +173,7 @@ GEM
       net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
+    mini_magick (4.12.0)
     mini_mime (1.1.5)
     mini_racer (0.9.0)
       libv8-node (~> 18.19.0.0)
@@ -266,6 +270,8 @@ GEM
     rubocop-ast (1.31.2)
       parser (>= 3.3.0.4)
     ruby-progressbar (1.13.0)
+    ruby-vips (2.2.1)
+      ffi (~> 1.12)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sass-embedded (1.72.0-x86_64-linux-gnu)
@@ -343,6 +349,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9)
   dotenv-rails
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   jquery-rails

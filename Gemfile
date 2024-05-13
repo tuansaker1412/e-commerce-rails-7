@@ -19,6 +19,7 @@ gem 'mini_racer'
 gem 'sassc'
 gem 'dartsass-sprockets'
 gem 'devise', '~> 4.9'
+gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   gem 'byebug'
