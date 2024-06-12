@@ -1,0 +1,46 @@
+<%= form_with(model: [:admin, admin_product]) do |form| %>
+  <div class="row g-3">
+    <div class="col-md-12">
+      <%= form.label :name, style: "display: block", class: "form-label", for: "cproduct_name" %>
+      <%= form.text_field :name, class: "form-control", id: "product_name" %>
+    </div>
+
+    <div class="col-md-12">
+      <%= form.label :description, style: "display: block", class: "form-label", for: "product_description" %>
+      <%= form.text_area :description, class: "form-control", id: "product_description" %>
+    </div>
+
+    <div class="col-md-12">
+      <%= form.label :price, style: "display: block", class: "form-label", for: "product_price" %>
+      <%= form.number_field :price, class: "form-control", id: "product_price" %>
+    </div>
+
+    <div class="col-md-12">
+      <%= form.label :category_id, style: "display: block", class: "form-label", for: "product_category_id" %>
+      <%= form.text_field :category_id, class: "form-control", id: "product_category_id" %>
+    </div>
+
+    <div class="col-md-12">
+      <% if @admin_product.images.any? %>
+        <% @admin_product.images.each do |img| %>
+          <%= image_tag img, class: "img-thumbnail", width: "150px" %><br>
+        <% end %>
+      <% end %>
+      <div class="input-group">
+        <%= form.file_field :images, multiple: true, class: "form-control", type: "file", id: "product_images" %>
+        <%= form.label :upload, class: "input-group-text", for: "product_images" %>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-check">
+        <%= form.check_box :active, class: "form-check-input", id: "product_active" %>
+        <%= form.label :active, style: "display: block", class: "form-check-label", type: "checkbox", for: "product_active" %>
+      </div>
+    </div>
+
+    <div>
+      <%= form.submit type == "update" ? "Update product" : "New product", class: "btn btn-info" %>
+    </div>
+  </div>
+<% end %>

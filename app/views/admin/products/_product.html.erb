@@ -1,0 +1,18 @@
+<td>
+  <%= product.images.any? ? image_tag(product.images.first.variant(:thumb)) : image_tag("https://via.placeholder.com/50") %>
+</td>
+<td>
+  <%= product.name %>
+</td>
+<td>
+  <%= product.description %>
+</td>
+<td>
+  $<%= (product.price/1.0).to_s %>
+</td>
+<td>
+  <%= product.category_id %>
+</td>
+<td>
+  <%= product.active %>
+</td>

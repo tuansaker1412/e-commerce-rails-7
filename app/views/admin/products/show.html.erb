@@ -1,0 +1,51 @@
+<div style="padding: 0.5rem;"></div>
+
+<div class="container-fluid">
+  <!--begin::Row-->
+  <div class="row g-4">
+    <!--begin::Col-->
+    <div class="col-md-12">
+      <!--begin::Accordion-->
+      <div class="card card-primary card-outline mb-4">
+        <!--begin::Header-->
+        <div class="card-header">
+          <div class="card-title">Product ID: <%= @admin_product.id %></div>
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body">
+          <div class="row g-4">
+            <div class="col-md-8">
+              <h6><strong>Name:</strong></h6>
+              <p><%= @admin_product.name %></p>
+              <h6><strong>Description:</strong></h6>
+              <p><%= @admin_product.description %></p>
+              <h6><strong>Price:</strong></h6>
+              <p><%= @admin_product.price %></p>
+              <h6><strong>Category_id:</strong></h6>
+              <p><%= @admin_product.category_id %></p>
+              <h6><strong>Active:</strong></h6>
+              <p><%= @admin_product.active %></p>
+            </div>
+            <div class="col-md-4">
+              <h6><strong>Image:</strong></h6>
+              <% if @admin_product.images.any? %>
+                <% @admin_product.images.each do |image| %>
+                  <%= image_tag(image, class: "img-fluid") %>
+                <% end %>
+              <% else %>
+                <%= image_tag("https://via.placeholder.com/50", class: "img-fluid") %>
+              <% end %>
+            </div>
+          </div>
+          <hr>
+          <%= link_to "Edit this product", edit_admin_product_path(@admin_product), class: "btn btn-warning" %>
+          <%= link_to "Back to products", admin_products_path, class: "btn btn btn-primary" %>
+          <hr>
+          <%= button_to "Destroy this product", [:admin, @admin_product], method: :delete, class: "btn btn-danger" %>
+        </div>
+        <!--end::Body-->
+      </div>
+    </div>
+  </div>
+</div>
