@@ -1,4 +1,6 @@
-<td><%= category.image.present? ? image_tag(category.image.variant(:thumb)) : image_tag("https://via.placeholder.com/50") %></td>
+<td>
+  <%= category.image.present? ? image_tag(category.image.variant(:thumb)) : image_tag("https://via.placeholder.com/50") %>
+</td>
 <td>
   <%= category.name %>
 </td>

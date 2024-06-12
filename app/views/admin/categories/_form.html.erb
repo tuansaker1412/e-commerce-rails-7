@@ -11,6 +11,9 @@
     </div>
 
     <div class="col-md-12">
+      <% if admin_category.image.present? %>
+        <%= image_tag admin_category.image, class: "img-thumbnail", width: "150px" %>
+      <% end %>
       <div class="input-group">
         <%= form.file_field :image, class: "form-control", type: "file", id: "category_image" %>
         <%= form.label :upload, class: "input-group-text", for: "category_image" %>
