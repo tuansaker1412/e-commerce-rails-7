@@ -36,14 +36,28 @@ class Admin::CategoriesController < AdminController
 
   # PATCH/PUT /admin/categories/1 or /admin/categories/1.json
   def update
-    respond_to do |format|
-      if @admin_category.update(admin_category_params)
-        format.html { redirect_to admin_category_url(@admin_category), notice: "Category was successfully updated." }
-        format.json { render :show, status: :ok, location: @admin_category }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @admin_category.errors, status: :unprocessable_entity }
+    # respond_to do |format|
+    #   if @admin_category.update(admin_category_params)
+    #     format.html { redirect_to admin_category_url(@admin_category), notice: "Category was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @admin_category }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @admin_category.errors, status: :unprocessable_entity }
+    #   end
+    # end
+
+    category_params = admin_category_params
+
+    # Check if the "images" key is blank or contains only blank elements
+    image = category_params.delete("image") if category_params["image"].blank?
+
+    if @admin_category.update(category_params)
+      if image
+        @admin_category.image.attach(image)
       end
+      redirect_to admin_category_url(@admin_category), notice: "Category was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
