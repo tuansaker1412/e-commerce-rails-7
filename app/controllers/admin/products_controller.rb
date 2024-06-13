@@ -36,14 +36,20 @@ class Admin::ProductsController < AdminController
 
   # PATCH/PUT /admin/products/1 or /admin/products/1.json
   def update
-    respond_to do |format|
-      if @admin_product.update(admin_product_params)
-        format.html { redirect_to admin_product_url(@admin_product), notice: "Product was successfully updated." }
-        format.json { render :show, status: :ok, location: @admin_product }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @admin_product.errors, status: :unprocessable_entity }
+    product_params = admin_product_params
+
+    # Check if the "images" key is blank or contains only blank elements
+    images = product_params.delete("images") if product_params["images"].blank? || product_params["images"].all?(&:blank?)
+
+    if @admin_product.update(product_params)
+      if images
+        images.each do |image|
+          @admin_product.images.attach(image)
+        end
       end
+      redirect_to admin_product_url(@admin_product), notice: "Product was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
