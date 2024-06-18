@@ -26,13 +26,14 @@
               <%= @admin_category.image.present? ? image_tag(@admin_category.image, class: "img-fluid") : image_tag("https://via.placeholder.com/50", class: "img-fluid") %>
             </div>
           </div>
-          <hr>
-          <%= link_to "Edit this category", edit_admin_category_path(@admin_category), class: "btn btn-warning" %>
-          <%= link_to "Back to categories", admin_categories_path, class: "btn btn btn-primary" %>
-          <hr>
-          <%= button_to "Destroy this category", [:admin, @admin_category], method: :delete, class: "btn btn-danger" %>
         </div>
         <!--end::Body-->
+        <!--begin::Footer-->
+        <div class="card-footer">
+          <%= link_to "Edit this category", edit_admin_category_path(@admin_category), class: "btn btn-secondary" %>
+          <%= link_to "Back to categories", admin_categories_path, class: "btn btn-secondary" %>
+        </div>
+        <!--end::Footer-->
       </div>
     </div>
   </div>

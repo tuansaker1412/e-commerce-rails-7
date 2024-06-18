@@ -16,9 +16,13 @@
         <div class="card-body">
           <%= render "form", admin_product: @admin_product, type: "new" %>
           <hr>
-          <%= link_to "Back to products", admin_products_path, class: "btn btn btn-warning" %>
         </div>
         <!--end::Body-->
+        <!--begin::Footer-->
+        <div class="card-footer">
+          <%= link_to "Back to products", admin_products_path, class: "btn btn btn-secondary" %>
+        </div>
+        <!--end::Footer-->
       </div>
     </div>
   </div>

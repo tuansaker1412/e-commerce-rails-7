@@ -1,14 +1,16 @@
+<!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+<!-- <script src="/dists/popper.min.js"></script> -->
+<!--end::Required Plugin(popperjs for Bootstrap 5)-->
+<!--begin::Required Plugin(Bootstrap 5)-->
+<!-- <script src="/dists/bootstrap.min.js"></script> -->
+<!--end::Required Plugin(Bootstrap 5)-->
 <!--begin::Third Party Plugin(OverlayScrollbars)-->
 <script src="/dists/overlayscrollbars.browser.es6.min.js"></script>
-<!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
-<script src="/dists/popper.min.js"></script>
-<!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
-<script src="/dists/bootstrap.min.js"></script>
-<!--end::Required Plugin(Bootstrap 5)-->
+<!--end::Third Party Plugin(OverlayScrollbars)-->
 <!--begin::OverlayScrollbars Configure-->
 <script is:inline>
-  const SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
-  const Default = {
+  var SELECTOR_SIDEBAR_WRAPPER = ".sidebar-wrapper";
+  var Default = {
     scrollbarTheme: "os-theme-light",
     scrollbarAutoHide: "leave",
     scrollbarClickScroll: true,

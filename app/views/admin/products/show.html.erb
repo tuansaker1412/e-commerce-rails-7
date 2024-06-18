@@ -38,13 +38,14 @@
               <% end %>
             </div>
           </div>
-          <hr>
-          <%= link_to "Edit this product", edit_admin_product_path(@admin_product), class: "btn btn-warning" %>
-          <%= link_to "Back to products", admin_products_path, class: "btn btn btn-primary" %>
-          <hr>
-          <%= button_to "Destroy this product", [:admin, @admin_product], method: :delete, class: "btn btn-danger" %>
         </div>
         <!--end::Body-->
+        <!--begin::Footer-->
+        <div class="card-footer">
+          <%= link_to "Edit this product", edit_admin_product_path(@admin_product), class: "btn btn-secondary" %>
+          <%= link_to "Back to products", admin_products_path, class: "btn btn btn-secondary" %>
+        </div>
+        <!--end::Footer-->
       </div>
     </div>
   </div>

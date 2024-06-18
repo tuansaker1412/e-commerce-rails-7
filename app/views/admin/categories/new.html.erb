@@ -15,10 +15,13 @@
         <!--begin::Body-->
         <div class="card-body">
           <%= render "form", admin_category: @admin_category, type: "new" %>
-          <hr>
-          <%= link_to "Back to categories", admin_categories_path, class: "btn btn btn-warning" %>
         </div>
         <!--end::Body-->
+        <!--begin::Footer-->
+        <div class="card-footer">
+          <%= link_to "Back to categories", admin_categories_path, class: "btn btn-secondary" %>
+        </div>
+        <!--end::Footer-->
       </div>
     </div>
   </div>
