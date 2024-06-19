@@ -4,6 +4,12 @@
   }
 </style>
 
+<% if notice.present? %>
+  <div class="callout callout-success mb-4">
+    <h5 class="fw-bold"><%= notice %></h5>
+  </div>
+<% end %>
+
 <!--begin::App Content Header-->
 <div class="app-content-header">
   <!--begin::Container-->

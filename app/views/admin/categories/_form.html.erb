@@ -1,4 +1,16 @@
 <%= form_with(model: [:admin, admin_category]) do |form| %>
+  <% if admin_category.errors.any? %>
+    <div id="error_explanation" class="callout callout-danger mb-4">
+      <h5 class="fw-bold"><%= pluralize(admin_category.errors.count, "error") %> prohibited this admin_category from being saved:</h5>
+
+      <ul>
+        <% admin_category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="row g-3">
     <div class="col-md-12">
       <%= form.label :name, style: "display: block", class: "form-label", for: "category_name" %>
