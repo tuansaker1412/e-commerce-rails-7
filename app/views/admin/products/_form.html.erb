@@ -1,7 +1,7 @@
 <%= form_with(model: [:admin, admin_product]) do |form| %>
   <div class="row g-3">
     <div class="col-md-12">
-      <%= form.label :name, style: "display: block", class: "form-label", for: "cproduct_name" %>
+      <%= form.label :name, style: "display: block", class: "form-label", for: "product_name" %>
       <%= form.text_field :name, class: "form-control", id: "product_name" %>
     </div>
 
@@ -39,8 +39,14 @@
       </div>
     </div>
 
+    <% unless admin_product.new_record? %>
+      <div class="col-md-12">
+        <%= link_to "Product Stock", admin_product_stocks_path(admin_product) %>
+      </div>
+    <% end %>
+
     <div>
-      <%= form.submit type == "update" ? "Update product" : "New product", class: "btn btn-info" %>
+      <%= form.submit class: "btn btn-info" %>
     </div>
   </div>
 <% end %>
