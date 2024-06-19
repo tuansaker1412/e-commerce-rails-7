@@ -1,0 +1,29 @@
+<%= form_with(model: [:admin, :product, admin_stock]) do |form| %>
+  <% if admin_stock.errors.any? %>
+    <div id="error_explanation" class="callout callout-danger mb-4">
+      <h5 class="fw-bold"><%= pluralize(admin_stock.errors.count, "error") %> prohibited this admin_stock from being saved:</h5>
+
+      <ul>
+        <% admin_stock.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row g-3">
+    <div class="col-md-12">
+      <%= form.label :size, style: "display: block", class: "form-label", for: "stock_size" %>
+      <%= form.text_field :size, class: "form-control", id: "stock_size" %>
+    </div>
+
+    <div class="col-md-12">
+      <%= form.label :amount, style: "display: block", class: "form-label", for: "stock_amount" %>
+      <%= form.number_field :amount, class: "form-control", id: "stock_amount" %>
+    </div>
+
+    <div>
+      <%= form.submit class: "btn btn-info" %>
+    </div>
+  </div>
+<% end %>

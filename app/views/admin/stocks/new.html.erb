@@ -1,0 +1,28 @@
+<div style="padding: 0.5rem;"></div>
+
+<div class="container-fluid">
+  <!--begin::Row-->
+  <div class="row g-4">
+    <!--begin::Col-->
+    <div class="col-md-12">
+      <!--begin::Accordion-->
+      <div class="card card-primary card-outline mb-4">
+        <!--begin::Header-->
+        <div class="card-header">
+          <div class="card-title">New stock</div>
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body">
+          <%= render "form", admin_stock: @admin_stock %>
+        </div>
+        <!--end::Body-->
+        <!--begin::Footer-->
+        <div class="card-footer">
+          <%= link_to "Back to stocks", admin_product_stocks_path, class: "btn btn btn-secondary" %>
+        </div>
+        <!--end::Footer-->
+      </div>
+    </div>
+  </div>
+</div>
