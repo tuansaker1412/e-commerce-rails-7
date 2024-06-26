@@ -1,5 +1,5 @@
 <!--begin::Sidebar-->
-<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark" data-controller="sidenav">
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
     <!--begin::Brand Link-->
@@ -28,15 +28,15 @@
         role="menu"
         data-accordion="false"
       >
-        <li class="nav-item menu-open">
-          <a href="#" class="nav-link">
+        <li class="nav-item" data-action="click->sidenav#toggleMenu" data-sidenav-target="navItem">
+          <%= link_to admin_path, class: "nav-link" do %>
             <i class="nav-icon bi bi-speedometer"></i>
             <p>
               Dashboard
             </p>
-          </a>
+          <% end %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" data-action="click->sidenav#toggleMenu" data-sidenav-target="navItem">
           <%= link_to admin_categories_path, class: "nav-link" do %>
             <i class="nav-icon bi bi-list"></i>
             <p>
@@ -44,7 +44,7 @@
             </p>
           <% end %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" data-action="click->sidenav#toggleMenu" data-sidenav-target="navItem">
           <%= link_to admin_products_path, class: "nav-link" do %>
             <i class="nav-icon bi bi-cart"></i>
             <p>
@@ -52,13 +52,13 @@
             </p>
           <% end %>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
+        <li class="nav-item" data-action="click->sidenav#toggleMenu" data-sidenav-target="navItem">
+          <%= link_to admin_orders_path, class: "nav-link" do %>
             <i class="nav-icon bi bi-truck"></i>
             <p>
               Orders
             </p>
-          </a>
+          <% end %>
         </li>
       </ul>
       <!--end::Sidebar Menu-->

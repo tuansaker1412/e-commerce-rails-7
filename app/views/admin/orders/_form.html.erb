@@ -1,0 +1,42 @@
+<%= form_with(model: [:admin, admin_order]) do |form| %>
+  <% if admin_order.errors.any? %>
+    <div id="error_explanation" class="callout callout-danger mb-4">
+      <h5 class="fw-bold"><%= pluralize(admin_order.errors.count, "error") %> prohibited this admin_order from being saved:</h5>
+
+      <ul>
+        <% admin_order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row g-3">
+    <div class="col-md-12">
+      <%= form.label :customer_email, style: "display: block", class: "form-label", for: "order_customer_email" %>
+      <%= form.text_field :customer_email, class: "form-control", id: "order_customer_email" %>
+    </div>
+
+    <div class="col-md-12">
+      <div class="form-check">
+        <%= form.check_box :fulilled, class: "form-check-input", id: "order_fulilled" %>
+        <%= form.label :fulilled, style: "display: block", class: "form-check-label", type: "checkbox", for: "order_fulilled" %>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <%= form.label :total, style: "display: block", class: "form-label", for: "order_total" %>
+      <%= form.number_field :total, class: "form-control", id: "order_total" %>
+    </div>
+
+    <div class="col-md-12">
+      <%= form.label :address, style: "display: block", class: "form-label", for: "order_address" %>
+      <%= form.text_field :address, class: "form-control", id: "order_address" %>
+    </div>
+
+    <div>
+      <%= form.submit class: "btn btn-info" %>
+    </div>
+  </div>
+<% end %>
+

@@ -1,0 +1,29 @@
+<div style="padding: 0.5rem;"></div>
+
+<div class="container-fluid">
+  <!--begin::Row-->
+  <div class="row g-4">
+    <!--begin::Col-->
+    <div class="col-md-12">
+      <!--begin::Accordion-->
+      <div class="card card-primary card-outline mb-4">
+        <!--begin::Header-->
+        <div class="card-header">
+          <div class="card-title">Editing order ID: <%= @admin_order.id %></div>
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body">
+          <%= render "form", admin_order: @admin_order %>
+        </div>
+        <!--end::Body-->
+        <!--begin::Footer-->
+        <div class="card-footer">
+          <%= link_to "Show this order", [:admin, @admin_order], class: "btn btn-secondary" %>
+          <%= link_to "Back to orders", admin_orders_path, class: "btn btn-secondary" %>
+        </div>
+        <!--end::Footer-->
+      </div>
+    </div>
+  </div>
+</div>
