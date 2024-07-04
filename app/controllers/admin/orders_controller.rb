@@ -3,8 +3,8 @@ class Admin::OrdersController < AdminController
 
   # GET /admin/orders or /admin/orders.json
   def index
-    @not_fulilled_orders = ::Order.where(fulilled: false).order(created_at: :asc)
-    @fulilled_orders = ::Order.where(fulilled: true).order(created_at: :asc)
+    @not_fulfilled_orders = ::Order.where(fulfilled: false).order(created_at: :asc)
+    @fulfilled_orders = ::Order.where(fulfilled: true).order(created_at: :asc)
   end
 
   # GET /admin/orders/1 or /admin/orders/1.json
@@ -66,6 +66,6 @@ class Admin::OrdersController < AdminController
 
     # Only allow a list of trusted parameters through.
     def admin_order_params
-      params.require(:order).permit(:customer_email, :fulilled, :total, :address)
+      params.require(:order).permit(:customer_email, :fulfilled, :total, :address)
     end
 end

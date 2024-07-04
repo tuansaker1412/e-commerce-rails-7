@@ -16,7 +16,7 @@ class Admin::OrdersTest < ApplicationSystemTestCase
 
     fill_in "Address", with: @admin_order.address
     fill_in "Customer email", with: @admin_order.customer_email
-    check "Fulilled" if @admin_order.fulilled
+    check "Fulfilled" if @admin_order.fulfilled
     fill_in "Total", with: @admin_order.total
     click_on "Create Order"
 
@@ -30,7 +30,7 @@ class Admin::OrdersTest < ApplicationSystemTestCase
 
     fill_in "Address", with: @admin_order.address
     fill_in "Customer email", with: @admin_order.customer_email
-    check "Fulilled" if @admin_order.fulilled
+    check "Fulfilled" if @admin_order.fulfilled
     fill_in "Total", with: @admin_order.total
     click_on "Update Order"
 

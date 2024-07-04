@@ -46,7 +46,7 @@
               <tr>
                 <th style="width: 10px">#</th>
                 <th>Customer email</th>
-                <th>Fulilled</th>
+                <th>Fulfilled</th>
                 <th>Total</th>
                 <th>Address</th>
                 <th>Created at</th>
@@ -54,7 +54,7 @@
               </tr>
             </thead>
             <tbody>
-              <% @not_fulilled_orders.each.with_index(1) do |admin_order, index| %>
+              <% @not_fulfilled_orders.each.with_index(1) do |admin_order, index| %>
                 <tr class="align-middle">
                   <td><%= index %></td>
                   <%= render admin_order %>
@@ -113,7 +113,7 @@
               <tr>
                 <th style="width: 10px">#</th>
                 <th>Customer email</th>
-                <th>Fulilled</th>
+                <th>Fulfilled</th>
                 <th>Total</th>
                 <th>Address</th>
                 <th>Created at</th>
@@ -121,7 +121,7 @@
               </tr>
             </thead>
             <tbody>
-              <% @fulilled_orders.each.with_index(1) do |admin_order, index| %>
+              <% @fulfilled_orders.each.with_index(1) do |admin_order, index| %>
                 <tr class="align-middle">
                   <td><%= index %></td>
                   <%= render admin_order %>

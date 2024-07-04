@@ -19,8 +19,8 @@
 
     <div class="col-md-12">
       <div class="form-check">
-        <%= form.check_box :fulilled, class: "form-check-input", id: "order_fulilled" %>
-        <%= form.label :fulilled, style: "display: block", class: "form-check-label", type: "checkbox", for: "order_fulilled" %>
+        <%= form.check_box :fulfilled, class: "form-check-input", id: "order_fulfilled" %>
+        <%= form.label :fulfilled, style: "display: block", class: "form-check-label", type: "checkbox", for: "order_fulfilled" %>
       </div>
     </div>
 
@@ -33,6 +33,15 @@
       <%= form.label :address, style: "display: block", class: "form-label", for: "order_address" %>
       <%= form.text_field :address, class: "form-control", id: "order_address" %>
     </div>
+
+    <% if admin_order.order_products.any? %>
+      <div class="form-control">Products:</div>
+      <% admin_order.order_products.each do |op| %>
+        <%= op.product.name %> -
+        <%= op.size %> -
+        <%= op.quantity %>
+      <% end %>
+    <% end %>
 
     <div>
       <%= form.submit class: "btn btn-info" %>
