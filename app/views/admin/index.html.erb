@@ -1,1 +1,121 @@
-<h3 class="app-content-header">Admin Home</h3>
+<h5 class="app-content-header">Admin Home</h5>
+
+<!--begin::Container-->
+<div class="container-fluid">
+  <h4 class="app-content-header">Daily Stats</h4>
+  <!-- Info boxes -->
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box">
+        <span class="info-box-icon text-bg-primary shadow-sm">
+          <i class="bi bi-currency-dollar"></i>
+        </span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Revenue</span>
+          <span class="info-box-number">
+            <small>$</small>
+            <%= @quick_stats[:revenue] ? (@quick_stats[:revenue]/1.0).to_s : "0" %>
+          </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box">
+        <span class="info-box-icon text-bg-danger shadow-sm">
+          <i class="bi bi-clipboard-data"></i>
+        </span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Total Sales</span>
+          <span class="info-box-number">
+            <%= @quick_stats[:sales] ? (@quick_stats[:sales]).to_s : "0" %>
+          </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+
+    <!-- fix for small devices only -->
+    <!-- <div class="clearfix hidden-md-up"></div> -->
+
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box">
+        <span class="info-box-icon text-bg-success shadow-sm">
+          <i class="bi bi-gift"></i>
+        </span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Average Sale</span>
+          <span class="info-box-number">
+            <small>$</small>
+            <%= @quick_stats[:avg_sale] ? (@quick_stats[:avg_sale]/1.0).to_s : "0" %>
+          </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box">
+        <span class="info-box-icon text-bg-warning shadow-sm">
+          <i class="bi bi-cart-fill"></i>
+        </span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Items/Sale</span>
+          <span class="info-box-number">
+            <%= @quick_stats[:per_sale].to_i %>
+          </span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+
+  <h4 class="app-content-header">Revenue</h4>
+  <div class="row">
+    <div class="col-12" data-controller="dashboard" data-dashboard-revenue-value="<%= @revenue_by_day.to_json %>">
+      <canvas id="revenueChart"></canvas>
+    </div>
+  </div>
+
+  <h4 class="app-content-header">Recent Unfulfilled Orders</h4>
+  <div class="row">
+    <div class="col-12">
+      <div class="card mb-12">
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @orders.each do |order, index| %>
+                <tr class="align-middle">
+                  <td><%= link_to order.id, admin_orders_path(order) %></td>
+                  <td><%= order.customer_email %></td>
+                  <td><%= order.created_at.strftime("%B %d, %Y %H:%M") %></td>
+                  <td><%= (order.total/1.0).to_s %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
