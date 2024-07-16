@@ -7,20 +7,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= render "layouts/admin/head" %>
+    <%= render "shared/admin/head" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary app-loaded sidebar-open">
     <div class="app-wrapper">
-      <%= render "layouts/admin/topbar" %>
-      <%= render "layouts/admin/sidenav" %>
+      <%= render "shared/admin/topbar" %>
+      <%= render "shared/admin/sidenav" %>
 
       <main class="app-main">
         <%= yield %>
       </main>
-      <%= render "layouts/admin/footer" %>
+      <%= render "shared/admin/footer" %>
     </div>
-    <%= render "layouts/admin/scripts" %>
+    <%= render "shared/admin/scripts" %>
   </body>
 </html>
