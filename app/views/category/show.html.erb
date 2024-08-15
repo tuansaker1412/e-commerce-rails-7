@@ -1,0 +1,41 @@
+<div class="container px-4 px-lg-5 mt-5">
+  <h3><%= @category.name %></h3>
+  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <% @products.each do |product| %>
+      <!-- Product card -->
+      <div class="col mb-5">
+        <div class="card h-100">
+          <!-- "Sale"/"new" badge -->
+          <div class="badge bg-danger text-white position-absolute mt-1 ms-1">Sale</div>
+          <!-- Product image -->
+<!--          <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="...">-->
+          <%= product.images.any? ? image_tag(product.images.first.variant(:medium), class: "card-img-top") : image_tag("https://via.placeholder.com/250", class: "card-img-top") %>
+          <!-- Product details  p-4 -->
+          <div class="card-body text-center">
+            <!-- Product name -->
+            <a href="#" class="h4 text-primary text-decoration-none"><%= product.name %></a>
+            <!-- Product rating -->
+            <div class="d-flex justify-content-center small text-warning my-2">
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-half"></div>
+              <div class="bi-star"></div>
+            </div>
+            <!-- Product price -->
+            <div class="product-price">
+              <!--<span class="text-muted text-decoration-line-through price-old">$20.55</span>-->
+              <span class="price fw-bold ms-2">$<%= (product.price/1.0).to_s %></span>
+            </div>
+          </div>
+          <!-- Product actions -->
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center">
+              <a class="btn btn-outline-dark mt-auto" href="#" role="button"><span class="bi bi-cart4"></span> Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

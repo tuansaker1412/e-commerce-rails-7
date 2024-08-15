@@ -22,4 +22,6 @@ Rails.application.routes.draw do
       resources :stocks
     end
   end
+
+  resources :category, only: [:show]
 end

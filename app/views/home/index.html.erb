@@ -25,7 +25,8 @@
                 <p class="card-text text-center"><%= category.name %></p>
                 <div class="d-flex justify-content-center align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Go Now</button>
+<!--                    <button type="button" class="btn btn-sm btn-outline-secondary">Go Now</button>-->
+                    <%= link_to "Go Now", category_path(category), class: "btn btn-sm btn-outline-secondary" %>
                   </div>
                 </div>
               </div>
